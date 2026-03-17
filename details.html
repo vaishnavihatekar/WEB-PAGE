@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Internship Details | Cognifyz Technologies</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <div class="progress-container">
+        <div class="progress-bar" id="progressBar"></div>
+    </div>
+
+    <nav>
+        <h2>Cognifyz</h2>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="details.html">Internship</a></li>
+            <li><a href="success.html">Success</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="apply.html">Apply</a></li>
+        </ul>
+    </nav>
+
+    <section class="section">
+        <h1>Internship Program Details</h1>
+        <p>Choose your track and start learning with real projects.</p>
+
+        <h2>Internship Tracks</h2>
+        <div class="cards">
+            <div class="card">
+                <h3>Frontend</h3>
+                <p>HTML, CSS, JavaScript, React</p>
+            </div>
+            <div class="card">
+                <h3>Backend</h3>
+                <p>Node.js, PHP, Databases</p>
+            </div>
+            <div class="card">
+                <h3>Full Stack</h3>
+                <p>Frontend + Backend Integration</p>
+            </div>
+        </div>
+
+        <h2>Duration</h2>
+        <p>1 Month | 3 Months | 6 Months</p>
+
+        <h2>Stipend</h2>
+        <p>Performance-based stipend available for selected candidates.</p>
+
+        <h2>Selection Process</h2>
+        <p>Application Review → Technical Task → Interview → Offer Letter</p>
+    </section>
+
+    <footer>
+        <p>Email: hr@cognifyztech.com</p>
+        <p>Phone: +91 98765 43210</p>
+        <p>© 2026 Cognifyz Technologies</p>
+    </footer>
+
+    <div class="bottom-nav">
+        <button onclick="goBack()">⬅ Back</button>
+        <button onclick="goNext()">Next ➡</button>
+    </div>
+
+    <script>
+        const pages = ["index.html", "about.html", "details.html", "success.html", "blog.html", "apply.html"];
+        const currentPage = window.location.pathname.split("/").pop();
+        const currentIndex = pages.indexOf(currentPage);
+
+        document.getElementById("progressBar").style.width = ((currentIndex + 1) / pages.length) * 100 + "%";
+
+        function goBack() {
+            if (currentIndex > 0) window.location.href = pages[currentIndex - 1];
+        }
+        function goNext() {
+            if (currentIndex < pages.length - 1) window.location.href = pages[currentIndex + 1];
+        }
+    </script>
+
+</body>
+
+</html>

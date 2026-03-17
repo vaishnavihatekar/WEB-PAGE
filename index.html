@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Developer Internship | Cognifyz Technologies</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <div class="progress-container">
+        <div class="progress-bar" id="progressBar"></div>
+    </div>
+
+    <nav>
+        <h2>Cognifyz</h2>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="details.html">Internship</a></li>
+            <li><a href="success.html">Success</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="apply.html">Apply</a></li>
+        </ul>
+    </nav>
+
+    <section class="section">
+        <h1>Web Developer Internship Opportunity at Cognifyz Technologies</h1>
+        <p>Kickstart your tech career with real-world project experience.</p>
+        <a class="btn" href="apply.html">Apply Now</a>
+        <a class="btn" href="details.html">Learn More</a>
+    </section>
+
+    <section class="section" style="background:#eef3ff;">
+        <h2>Internship Benefits</h2>
+        <div class="cards">
+            <div class="card">
+                <h3>Real Projects</h3>
+                <p>Work on live development tasks and build real skills.</p>
+            </div>
+            <div class="card">
+                <h3>Mentorship</h3>
+                <p>Learn from experienced developers and industry experts.</p>
+            </div>
+            <div class="card">
+                <h3>Certification</h3>
+                <p>Receive an internship completion certificate and membership.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>Email: hr@cognifyztech.com</p>
+        <p>Phone: +91 98765 43210</p>
+        <p>© 2026 Cognifyz Technologies</p>
+    </footer>
+
+    <div class="bottom-nav">
+        <button onclick="goNext()">Next ➡</button>
+    </div>
+
+    <script>
+        const pages = ["index.html", "about.html", "details.html", "success.html", "blog.html", "apply.html"];
+        const currentPage = window.location.pathname.split("/").pop();
+        const currentIndex = pages.indexOf(currentPage);
+
+        document.getElementById("progressBar").style.width = ((currentIndex + 1) / pages.length) * 100 + "%";
+
+        function goNext() {
+            if (currentIndex < pages.length - 1) window.location.href = pages[currentIndex + 1];
+        }
+    </script>
+
+</body>
+
+</html>

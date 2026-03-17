@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Success Stories | Cognifyz Technologies</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <div class="progress-container">
+        <div class="progress-bar" id="progressBar"></div>
+    </div>
+
+    <nav>
+        <h2>Cognifyz</h2>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="details.html">Internship</a></li>
+            <li><a href="success.html">Success</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="apply.html">Apply</a></li>
+        </ul>
+    </nav>
+
+    <section class="section">
+        <h1>Success Stories</h1>
+        <p>Our interns achieve real results and career growth.</p>
+
+        <h2>Testimonials</h2>
+        <div class="cards">
+            <div class="card">
+                <h3>“Great learning experience!”</h3>
+                <p>- Aditi</p>
+            </div>
+            <div class="card">
+                <h3>“Got real-world project exposure.”</h3>
+                <p>- Rahul</p>
+            </div>
+        </div>
+
+        <h2>Previous Intern Projects</h2>
+        <p>Portfolio websites, Admin dashboards, REST APIs, and more.</p>
+
+        <h2>Placement Achievements</h2>
+        <p>Many interns placed in top tech companies and startups.</p>
+    </section>
+
+    <footer>
+        <p>Email: hr@cognifyztech.com</p>
+        <p>Phone: +91 98765 43210</p>
+        <p>© 2026 Cognifyz Technologies</p>
+    </footer>
+
+    <div class="bottom-nav">
+        <button onclick="goBack()">⬅ Back</button>
+        <button onclick="goNext()">Next ➡</button>
+    </div>
+
+    <script>
+        const pages = ["index.html", "about.html", "details.html", "success.html", "blog.html", "apply.html"];
+        const currentPage = window.location.pathname.split("/").pop();
+        const currentIndex = pages.indexOf(currentPage);
+
+        document.getElementById("progressBar").style.width = ((currentIndex + 1) / pages.length) * 100 + "%";
+
+        function goBack() {
+            if (currentIndex > 0) window.location.href = pages[currentIndex - 1];
+        }
+        function goNext() {
+            if (currentIndex < pages.length - 1) window.location.href = pages[currentIndex + 1];
+        }
+    </script>
+
+</body>
+
+</html>
